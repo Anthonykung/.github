@@ -1,0 +1,70 @@
+name: Report A 🐛
+description: Use this to report a bug
+title: "[BUG] <title>"
+labels: [Bug, Needs Triage]
+assignees:
+  - Anthonykung
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Hello 👋
+        Thank you for reporting a ~~wumpus 👾~~ bug 🐛
+        
+ - type: checkboxes
+    id: existence
+    attributes:
+      label: New Bug
+      description: Before we get started, please check if the bug has already been reported. It helps a lot if you leave a comment on an existing bug instead.
+      options:
+      - label: This is a new bug
+        required: true
+        
+  - type: textarea
+    id: brief
+    attributes:
+      label: Description
+      description: Please describe the bug, what is the current behavior and what supposed to happen.
+    validations:
+      required: true
+      
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps To Reproduce
+      description: Please show the steps to reproduce this behavior
+      placeholder: |
+        1. In this environment...
+        2. With this config...
+        3. Run '...'
+        4. See error...
+    validations:
+      required: true
+      
+  - type: textarea
+    id: envs
+    attributes:
+      label: Environment
+      description: |
+        examples:
+          - **OS**: Ubuntu 20.04
+          - **Node**: 13.14.0
+          - **npm**: 7.6.3
+      value: |
+          - OS:
+          - Node:
+          - npm:
+      render: markdown
+    validations:
+      required: false
+      
+  - type: textarea
+    id: extra
+    attributes:
+      label: Additional Information
+      description: |
+        Use this field for any additional information that might help with the bug, e.g. logs or error messages
+        
+        Tip: You can attach images or log files by clicking this area to highlight it and then dragging files in.
+    validations:
+      required: false
